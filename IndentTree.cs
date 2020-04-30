@@ -104,24 +104,5 @@ namespace Endowdly.Utility
 
             foreach (var child in children) child.NormalizeIndentation(n + 1);
         }
-    }
-
-    internal class Statement
-    {
-        public Statement(string s)
-        {
-            Level = GetIndentLevel(s);
-            Value = s.Trim();
-        }
-
-        public int Level { get; }
-
-        public string Value { get; }
-
-        private int GetIndentLevel(string s) => s
-            .ToCharArray()
-            .TakeWhile(c => char.IsWhiteSpace(c))
-            .Count(); 
-                
-    }
+    } 
 }
